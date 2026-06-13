@@ -247,7 +247,7 @@ body{font-family:'Segoe UI','Noto Sans JP',sans-serif;background:var(--bg);color
 <div class="hdr">
   <div>
     <div class="hdr-t">📠 ScanSnap iX1600 サポートシミュレーター</div>
-    <div class="hdr-s">クリプラ設定確認用 — 電話対応中に使用 ｜ SSID: <b>clipla</b>（ステルス） PW: <b>clip2020</b></div>
+    <div class="hdr-s">クリプラ設定確認用 — 電話対応中に使用 ｜ SSID: <b>clipla</b>（ステルス） PW: <b>****</b></div>
   </div>
   <span class="badge">社内専用</span>
 </div>
@@ -307,7 +307,7 @@ const S = {
   touchConn:null, pcConn:null,
   chkMap:{}, wiz:0, selSSID:null,
 };
-const CLIPLA_SSID='clipla', CLIPLA_PASS='clip2020';
+const CLIPLA_SSID='clipla', CLIPLA_PASS='****';
 
 // ===== フロー定義（ステップにdevice種別を付与）=====
 const FLOWS = {
@@ -327,7 +327,7 @@ const FLOWS = {
       {t:'本体 設定 → Wi-Fi設定 を開く',     dev:'body'},
       {t:'ネットワーク（SSID）設定を選択',   dev:'body'},
       {t:'SSIDを手動入力：clipla',           dev:'body'},
-      {t:'パスワード入力：clip2020',          dev:'body'},
+      {t:'パスワード入力：****',          dev:'body'},
       {t:'接続完了確認',                     dev:'body'},
       {t:'PC側 ScanSnap Home で再確認',      dev:'pc'},
     ]
@@ -675,13 +675,13 @@ function renderReconnect(){
       </div>
       <div class="tinfo">
         <div class="tinfo-lbl">パスワード</div>
-        <div class="tinfo-val ok">clip2020</div>
+        <div class="tinfo-val ok">****</div>
       </div>
       <div class="tbtnrow">
         <button class="tbtn p" onclick="nextStep()">接続する</button>
         <button class="tbtn s" onclick="prevStep()">戻る</button>
       </div>
-      <div class="tmsg" style="color:#fbbf24;font-size:8px;">「clip2020」 全て半角小文字！</div>
+      <div class="tmsg" style="color:#fbbf24;font-size:8px;">「****」 全て半角小文字！</div>
     </div>`,
     // step5: 接続中
     `<div class="touch-body">
@@ -713,7 +713,7 @@ function renderReconnect(){
         <div class="ibox ${S.step===3||S.step===4?'warn':'blue'}">
           ${S.step===2?'⚠️ <b>cliplaはステルスSSID</b><br>一覧に出ないため必ず「手動入力」を選びます'
            :S.step===3?`⚠️ SSID：<span class="mark">clipla</span>（半角小文字・スペースなし）`
-           :S.step===4?`⚠️ PW：<span class="mark">clip2020</span>（半角小文字）<br>0（ゼロ）と O（オー）を間違えないよう注意`
+           :S.step===4?`⚠️ PW：<span class="mark">****</span>（半角小文字）<br>0（ゼロ）と O（オー）を間違えないよう注意`
            :S.step===5?'⏳ 接続まで10〜30秒かかることがあります'
            :S.step===6?'✅ 本体の接続完了。次にPC側を確認します'
            :'📞 画面の操作をそのままお客様に案内してください'}
@@ -823,7 +823,7 @@ const TS_ITEMS=[
       <li>「clipla」は<b>ステルスSSID（非公開）</b>のため一覧には表示されません</li>
       <li>→「<b>SSIDを手動入力</b>」を選択してください（フロー②参照）</li>
       <li>SSID：<b>clipla</b>（全て半角小文字）</li>
-      <li>PW：<b>clip2020</b>（全て半角小文字）</li>
+      <li>PW：<b>****</b>（全て半角小文字）</li>
     </ul>
     <div class="ibox warn" style="margin-top:7px;">⚠️ SSID・PWとも全て半角小文字。大文字・全角になっていないか要確認</div>`,
   },
@@ -831,12 +831,12 @@ const TS_ITEMS=[
     dev:'body',
     q:'⑤ パスワードを入力しても接続エラーになる',
     a:`<ul>
-      <li>PW <b>clip2020</b> を再確認（全て半角小文字）</li>
+      <li>PW <b>****</b> を再確認（全て半角小文字）</li>
       <li>「パスワードを表示する」があれば有効にして一文字ずつ確認</li>
       <li>「0（ゼロ）」と「O（オー）」の混同に注意</li>
       <li>Wi-Fi初期化 → フロー② から再設定</li>
     </ul>
-    <div class="ibox blue" style="margin-top:7px;">📞「パスワードはclip2020です。c・l・i・p・2・0・2・0 と一文字ずつ確認しながら入力していただけますか？」</div>`,
+    <div class="ibox blue" style="margin-top:7px;">📞「パスワードは****です。c・l・i・p・2・0・2・0 と一文字ずつ確認しながら入力していただけますか？」</div>`,
   },
   {
     dev:'pc',
